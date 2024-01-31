@@ -1,0 +1,12 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: chartreuse;
+    /* Свойство перехода */
+    /* transition: название_свойства продолжительность, ... */
+    transition: border-radius 1s;
+}
+
+#div-1:hover {
+    border-radius: 50%;
+}

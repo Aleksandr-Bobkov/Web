@@ -1,0 +1,75 @@
+@keyframes anim1 {
+    from {
+        background-color: chartreuse;
+        transform: translate(-10px, -10px);
+    }
+    to {
+        background-color: blue;
+    }
+}
+
+@keyframes anim2 {
+    0% {
+        background-color: chartreuse;
+    }
+    25% {
+        background-color: blue;
+    }
+
+    50% {
+        background-color: blueviolet;
+    }
+
+    100% {
+        background-color: crimson;
+    }
+}
+
+@keyframes anim4 {
+    from {
+        background-color: chartreuse;
+        transform: translate(10px, 10px);
+    }
+    to {
+        background-color: blue;
+    }
+}
+
+.container {
+    display: inline-block;
+}
+
+div div {
+    width: 200px;
+    height: 200px;
+    background-color: chartreuse;
+    margin-bottom: 4px;
+}
+
+.div-1 {
+    animation-name: anim1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.div-2 {
+    animation-name: anim2;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+.div-3 {
+
+}
+
+.div-4 {
+    animation-name: anim4;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+
+IgnatUklyaevskii
+fT1gw&wmDd
