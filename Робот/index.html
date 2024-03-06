@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Робот</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            border: 1px solid black;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            font-size: x-large;
+        }
+        #total {
+            font-size: x-large;
+        }
+        .current {
+            background-color: chartreuse;
+        }
+        .wall {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td class="current">4</td><td>1</td><td>7</td><td>3</td>
+        </tr>
+        <tr>
+            <td>2</td><td>1</td><td>2</td><td>7</td>
+        </tr>
+        <tr>
+            <td>7</td><td>3</td><td class="wall">4</td><td>2</td>
+        </tr>
+        <tr>
+            <td>1</td><td>1</td><td>7</td><td>9</td>
+        </tr>
+    </table>
+    <div id="total">Total: 0</div>
+    <script>
+        /*
+         * Дана таблица, в ячейках которой числа. Некоторые ячейки - "стенки" (имеют класс wall).
+         * Робот находится в верхнем левом углу. С помощью клавиш w, a, s, d можно двигать его в 4 направлениях.
+         * Через стенки проходить нельзя. При движении робот получает приз в размере числа, записанного в ячейке.
+         * Суммарный приз должен отображаться в каком-то DIV.
+         */
+        let pos = [0, 0];
+        let total = 0;
+
+        let row, col;
+        document.addEventListener('keydown', function(event) {
+            let currentCell = document.querySelector('.current');
+            switch (event.key) {
+                case 'w':
+                    row = currentCell.parentElement.previousElementSibling;
+                    col = currentCell.cellIndex;
+                    break;
+                case 'a':
+                    row = currentCell.parentElement;
+                    col = currentCell.cellIndex - 1;
+                    break;
+                case 's':
+                    row = currentCell.parentElement.nextElementSibling;
+                    col = currentCell.cellIndex;
+                    break;
+                case 'd':
+                    row = currentCell.parentElement;
+                    col = currentCell.cellIndex + 1;
+                    break;
+            }
+            document.querySelector('.current').classList.remove('current');
+            row.cells[col].classList.add('current');
+        })
+    </script>
+</body>
+</html>
