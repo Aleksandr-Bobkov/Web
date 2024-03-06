@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Простое число</title>
+</head>
+<script>
+    function IsPrime(number) {
+        for (let i = 2; i < Math.sqrt(number) + 1; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    function calc() {
+        let number = +document.getElementById("number").value;
+        let count = 0;
+        let i = 1;
+        let res = "";
+        while (count < number) {
+            if (IsPrime(i)) {
+                res += `${i} `;
+                count++;
+            }
+            i++;
+        }
+
+        document.getElementById("result").innerHTML = res;
+    }
+</script>
+<body>
+<form>
+    <input type="text" id="number">
+    <input type="button" value="Посчитать" onclick="calc()">
+    <div id="result"></div>
+</form>
+</body>
+</html>
