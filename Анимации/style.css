@@ -9,6 +9,9 @@
 }
 
 @keyframes anim2 {
+    from {
+        transform: translate(-10px, 10px);
+    }
     0% {
         background-color: chartreuse;
     }
@@ -22,6 +25,16 @@
 
     100% {
         background-color: crimson;
+    }
+}
+
+@keyframes anim3 {
+    from {
+        background-color: chartreuse;
+        transform: translate(10px, -10px);
+    }
+    to {
+        background-color: blue;
     }
 }
 
@@ -39,34 +52,42 @@
     display: inline-block;
 }
 
-div div {
+.div-1, .div-2, .div-3, .div-4 {
     width: 200px;
     height: 200px;
     background-color: chartreuse;
     margin-bottom: 4px;
 }
 
+.wrapper {
+    margin-top: 50px;
+    margin-left: 50px;
+}
+
 .div-1 {
     animation-name: anim1;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
 .div-2 {
     animation-name: anim2;
-    animation-duration: 4s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
 
 .div-3 {
-
+    animation-name: anim3;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
 }
 
 .div-4 {
     animation-name: anim4;
-    animation-duration: 3s;
+    animation-duration: 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate-reverse;
 }
